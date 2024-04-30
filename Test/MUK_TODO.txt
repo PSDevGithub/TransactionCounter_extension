@@ -1,0 +1,4 @@
+Az AL oszlopban lévő sorokat módosítja az alábbiak szerint:
+-	’AK’ oszlopban (’TR type’), a’Bank account’-ra szűrve, a TR számot 1-ről 0,5-re kell átírni
+-	’E’ oszlopban, ahol a ’Document No’  S/0*-val kezdődik és a az ’AL’ oszlopban a TR szám 1, ott a 0,5-re kell átírni a TR számot
+-	’AO’ oszlopban, ahol a ’Ledger Entry Document No’ értéke nem üres (tehát van benne vmilyen érték), ott a TR számot ki kell nullázni

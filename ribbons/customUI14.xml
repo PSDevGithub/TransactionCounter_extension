@@ -1,0 +1,20 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+  <ribbon startFromScratch="false">
+    <tabs>
+      <tab id="customTab" label="PSDevExtensions">
+        <group id="trcounter" label="TR Counter">
+          <button id="muk" label="MUK" imageMso="MasterDocumentShow" size="large" onAction="Module1.MUK_TransactionCounter" 
+          />
+          <button id="riverside" label="Riverside" imageMso="MasterDocumentShow" size="large" onAction="Module1.Riverside_TransactionCounter" 
+          />
+
+          <button id="helpButton" label="Súgó"
+            imageMso="Help" size="large"
+            onAction="Module1.ShowHelp"
+            screentip="Kattints a részletes súgóért"
+            supertip="Kattints ide a funkció részletes magyarázatáért."/>
+          </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>

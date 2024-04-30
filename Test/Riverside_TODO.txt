@@ -1,0 +1,7 @@
+Küldöm a Riverside TR-jét is, itt az alábbiakat szoktam módosítani ( AL oszlopban sárgázva a módosítások):
+
+1.	’H’ oszlopban rászűrök a ’BA-PS-ESCROWACC’-ra és a ’W’ oszlopban <0 ( kivéve Bankkötség – ezt kiveszem a szűrésből az ’L’ oszlopban(Description)) és az AJ oszlopban ( ’PS makes bank transfer) átírom a TR számot 1-re, illetve az AL oszlopban 1,5-re
+2.	Rászűrök az AL szlopban ( ’TR Type’) ’Bank account’-ra és az AJ oszlop=0 (PS makes bank transfer) ’AL’ oszlopban átírom a TR számot 0,5-re
+3.	’AL’ oszlop (’TR type’) rászűrök ’DEPR’-reTR számoz átírom 0,2-re AL oszlopban
+
+Kérdés esetén keressetek.
