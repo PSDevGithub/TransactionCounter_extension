@@ -1,5 +1,3 @@
-Attribute VB_Name = "Module1"
-
 Public Sub ShowHelp(control As IRibbonControl)
     Dim message As String
     message = "MUK:" & vbCrLf & _
@@ -29,18 +27,18 @@ Public Sub MUK_TransactionCounter(control As IRibbonControl)
     
     ' Végigmegyünk minden soron
     For i = 1 To lastRow
-        If ws.Cells(i, "A").Value <> "uniqueID" And ws.Cells(i, "A").Value <> "" Then        
-            ' Az AK oszlopban 'Bank account' szűrése
-            If ws.Cells(i, "AK").Value = "Bank account" And ws.Cells(i, "AL").Value = 1 Then
+        If ws.Cells(i, "A").Value <> "uniqueID" And ws.Cells(i, "A").Value <> "" Then
+            ' Az AK oszlopban 'Bank account' szurése
+            If ws.Cells(i, "AK").Value = "Bank Account" And ws.Cells(i, "AL").Value = 1 Then
                 ws.Cells(i, "AL").Value = 0.5
             End If
             
-            ' Az E oszlopban 'Document No' szűrése
+            ' Az E oszlopban 'Document No' szurése
             If Left(ws.Cells(i, "E").Value, 3) = "S/0" And ws.Cells(i, "AL").Value = 1 Then
                 ws.Cells(i, "AL").Value = 0.5
             End If
             
-            ' Az AO oszlopban 'Ledger Entry Document No' ellenőrzése
+            ' Az AO oszlopban 'Ledger Entry Document No' ellenorzése
             If ws.Cells(i, "AO").Value <> "" And ws.Cells(i, "AL").Value <> 0 Then
                 ws.Cells(i, "AL").Value = 0
             End If
@@ -58,8 +56,8 @@ Public Sub Riverside_TransactionCounter(control As IRibbonControl)
     lastRow = ws.Cells(ws.Rows.Count, "AL").End(xlUp).Row
     
     For i = 1 To lastRow
-        If ws.Cells(i, "A").Value <> "uniqueID" And ws.Cells(i, "A").Value <> "" Then        
-            ' Első feltétel
+        If ws.Cells(i, "A").Value <> "uniqueID" And ws.Cells(i, "A").Value <> "" Then
+            ' Elso feltétel
             If ws.Cells(i, "H").Value = "BA-PS-ESCROWACC" And ws.Cells(i, "W").Value < 0 And ws.Cells(i, "L").Value <> "Bankköltség" Then
                 ws.Cells(i, "AL").Value = 1.5
                 ws.Cells(i, "AJ").Value = 1
