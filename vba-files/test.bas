@@ -58,10 +58,16 @@ Public Sub Riverside_TransactionCounter(control As IRibbonControl)
     For i = 1 To lastRow
         If ws.Cells(i, "A").Value <> "uniqueID" And ws.Cells(i, "A").Value <> "" Then
             ' Elso feltétel
-            If ws.Cells(i, "H").Value = "BA-PS-ESCROWACC" And ws.Cells(i, "W").Value < 0 And (InStr(UCase(ws.Cells(i, "L").Value), "BANKKÖLTSÉG") > 0 Or InStr(UCase(ws.Cells(i, "L").Value), "BANKKTG")) Then
+            If ws.Cells(i, "H").Value = "BA-PS-ESCROWACC" And ws.Cells(i, "W").Value < 0 And (InStr(UCase(ws.Cells(i, "L").Value), "BANKKÖLTSÉG") Or InStr(UCase(ws.Cells(i, "L").Value), "BANKKTG")) > 0 Then
+                ws.Cells(i, "AL").Value = 0.5
+                ws.Cells(i, "AJ").Value = 0
+            End If
+            
+            If ws.Cells(i, "H").Value = "BA-PS-ESCROWACC" And ws.Cells(i, "W").Value < 0 And (InStr(UCase(ws.Cells(i, "L").Value), "BANKKÖLTSÉG") Or InStr(UCase(ws.Cells(i, "L").Value), "BANKKTG")) <= 0 Then
                 ws.Cells(i, "AL").Value = 1.5
                 ws.Cells(i, "AJ").Value = 1
             End If
+            
             
             ' Második feltétel
             If UCase(ws.Cells(i, "AK").Value) = "BANK ACCOUNT" And ws.Cells(i, "AJ").Value = 0 Then
@@ -78,3 +84,5 @@ Public Sub Riverside_TransactionCounter(control As IRibbonControl)
 
     MsgBox "Kész", , ""
 End Sub
+
+
